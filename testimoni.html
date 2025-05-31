@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimoni | Internship Global</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .hover-zoom img {
+        transition: transform 0.5s ease;
+      }
+      .hover-zoom:hover img {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body class="bg-white text-[#0d1b2a] font-sans">
+    <!-- Navbar -->
+    <nav
+      class="flex items-center justify-between px-6 md:px-16 py-4 border-b border-blue-200 bg-white/80 backdrop-blur-md fixed w-full z-10"
+    >
+      <a href="index.html" class="flex items-center space-x-3">
+        <div
+          class="w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full"
+        ></div>
+        <span class="text-xl font-semibold text-blue-800">Intern Global</span>
+      </a>
+      <ul class="hidden md:flex space-x-8 text-sm text-blue-600">
+        <li><a href="tentang.html" class="hover:text-blue-800">Tentang</a></li>
+        <li>
+          <a href="internship.html" class="hover:text-blue-800">Internship</a>
+        </li>
+        <li><a href="profesi.html" class="hover:text-blue-800">Profesi</a></li>
+        <li>
+          <a href="testimoni.html" class="hover:text-blue-800 font-bold"
+            >Testimoni</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Testimoni Section -->
+    <section class="pt-32 pb-20 px-6 md:px-16 bg-blue-50">
+      <div class="max-w-6xl mx-auto text-center">
+        <h1 class="text-4xl font-bold text-blue-800 mb-6">
+          Testimoni Alumni Program OJT Taiwan
+        </h1>
+        <p class="text-blue-600 mb-10">
+          Cerita inspiratif dari alumni yang telah sukses menjalani magang di
+          Taiwan melalui Internship Global.
+        </p>
+
+        <div
+          id="testimoni-list"
+          class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 text-left"
+        ></div>
+
+        <div class="mt-10">
+          <a
+            href="#"
+            class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-6 py-3 rounded-full shadow transition"
+          >
+            Lihat Selengkapnya
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-white border-t border-blue-100 text-blue-600 text-sm mt-16"
+    >
+      <div class="max-w-6xl mx-auto py-10 px-6 md:px-16">
+        <div class="grid md:grid-cols-2 gap-6 text-center md:text-left">
+          <div>
+            <h4 class="font-semibold text-blue-800 mb-2">Kontak Kami</h4>
+            <ul class="space-y-1">
+              <li>📞 +62 812-3456-7890</li>
+              <li>📧 info@internshipglobal.com</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-blue-800 mb-2">Sosial Media</h4>
+            <ul class="space-y-1">
+              <li>📸 Instagram: @internship.global</li>
+              <li>🎵 TikTok: @internshipglobal</li>
+            </ul>
+          </div>
+        </div>
+        <p class="mt-8 text-center text-xs text-blue-400">
+          &copy; 2025 Internship Global. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Script Generate Testimoni -->
+    <script>
+      const testimonials = [
+        {
+          nama: "Ananda Asih Anindia",
+          universitas: "Polnes Samarinda",
+          foto: "../public/image/ananda.jpg",
+          testimoni:
+            "Saya sangat bersyukur bisa menjalani OJT di Taiwan. Pengalaman ini membuka banyak pintu karier dan memperluas wawasan saya.",
+        },
+        {
+          nama: "Ratna Galuh Larasati",
+          universitas: "Polnes Samarinda",
+          foto: "../public/image/ratna.jpg",
+          testimoni:
+            "Program OJT Taiwan membantu saya mengembangkan soft skill dan hard skill di lingkungan kerja nyata internasional.",
+        },
+        {
+          nama: "Arni Enal",
+          universitas: "Polnes Samarinda",
+          foto: "../public/image/arni.jpg",
+          testimoni:
+            "Magang di Taiwan adalah pengalaman paling berharga selama kuliah. Saya jadi lebih percaya diri dan profesional.",
+        },
+        {
+          nama: "Asisam Dinda",
+          universitas: "Polnes Samarinda",
+          foto: "../public/image/asisam.jpeg",
+          testimoni:
+            "Lingkungan kerja di Taiwan sangat mendukung. Internship Global memfasilitasi proses dari awal hingga akhir dengan sangat baik.",
+        },
+        {
+          nama: "Asria Merindah",
+          universitas: "Polnes Samarinda",
+          foto: "../public/image/asria.jpg",
+          testimoni:
+            "Saya mendapat pengalaman berharga di perusahaan manufaktur Taiwan. Semua difasilitasi secara profesional.",
+        },
+        {
+          nama: "Mariana Malau",
+          universitas: "Polnes Samarinda",
+          foto: "../public/image/mariana.jpg",
+          testimoni:
+            "Terima kasih Internship Global! Lewat program OJT Taiwan, saya memahami dunia kerja internasional secara langsung.",
+        },
+      ];
+
+      const container = document.getElementById("testimoni-list");
+
+      testimonials.forEach(({ nama, universitas, foto, testimoni }) => {
+        const card = document.createElement("div");
+        card.className =
+          "bg-white rounded-xl shadow-md p-6 transition hover:shadow-xl hover-zoom";
+
+        card.innerHTML = `
+          <img src="${foto}" alt="${nama}" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+          <div class="text-center">
+            <p class="font-semibold text-blue-800 text-lg">${nama}</p>
+            <p class="text-blue-600 text-sm mb-4">${universitas}</p>
+          </div>
+          <p class="text-blue-700 italic text-sm text-center">"${testimoni}"</p>
+        `;
+
+        container.appendChild(card);
+      });
+    </script>
+  </body>
+</html>
