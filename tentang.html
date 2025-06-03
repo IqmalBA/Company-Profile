@@ -22,18 +22,61 @@
         ></div>
         <span class="text-xl font-semibold text-blue-800">Intern Global</span>
       </a>
-      <ul class="hidden md:flex space-x-8 text-sm text-blue-600">
+
+      <!-- Hamburger Button (mobile only) -->
+      <button
+        id="menu-btn"
+        class="md:hidden flex items-center text-blue-600 focus:outline-none"
+        aria-label="Toggle menu"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
+
+      <!-- Menu items -->
+      <ul
+        id="menu"
+        class="hidden md:flex space-x-8 text-sm text-blue-600 absolute md:static bg-white md:bg-transparent top-full left-0 w-full md:w-auto border-t border-blue-200 md:border-none"
+      >
         <li>
-          <a href="tentang.html" class="hover:text-blue-800 font-bold"
+          <a
+            href="tentang.html"
+            class="block px-6 py-3 hover:text-blue-800 md:hover:underline font-bold md:font-normal"
             >Tentang</a
           >
         </li>
         <li>
-          <a href="internship.html" class="hover:text-blue-800">Internship</a>
+          <a
+            href="internship.html"
+            class="block px-6 py-3 hover:text-blue-800 md:hover:underline"
+            >Internship</a
+          >
         </li>
-        <li><a href="profesi.html" class="hover:text-blue-800">Profesi</a></li>
         <li>
-          <a href="testimoni.html" class="hover:text-blue-800">Testimoni</a>
+          <a
+            href="profesi.html"
+            class="block px-6 py-3 hover:text-blue-800 md:hover:underline"
+            >Profesi</a
+          >
+        </li>
+        <li>
+          <a
+            href="testimoni.html"
+            class="block px-6 py-3 hover:text-blue-800 md:hover:underline"
+            >Testimoni</a
+          >
         </li>
       </ul>
     </nav>
@@ -123,9 +166,38 @@
 
     <!-- Footer -->
     <footer
-      class="bg-white border-t border-blue-100 py-6 text-center text-blue-600 mt-12"
+      class="bg-white border-t border-blue-100 text-blue-600 text-sm mt-16"
     >
-      <p>&copy; 2025 Internship Global. All rights reserved.</p>
+      <div class="max-w-6xl mx-auto py-10 px-6 md:px-16">
+        <div class="grid md:grid-cols-2 gap-6 text-center md:text-left">
+          <div>
+            <h4 class="font-semibold text-blue-800 mb-2">Kontak Kami</h4>
+            <ul class="space-y-1">
+              <li>📞 +62 82114931561</li>
+              <li>📧 premiummmgtconsulting@gmail.com</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-blue-800 mb-2">Sosial Media</h4>
+            <ul class="space-y-1">
+              <li>📸 Instagram: magang_luarnegeri</li>
+              <li>🎵 TikTok: @magang_luar_negeri00</li>
+            </ul>
+          </div>
+        </div>
+        <p class="mt-8 text-center text-xs text-blue-400">
+          &copy; 2025 Internship Global. All rights reserved.
+        </p>
+      </div>
     </footer>
+
+    <script>
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
   </body>
 </html>

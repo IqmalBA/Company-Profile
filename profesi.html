@@ -2,7 +2,7 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Profesi | Internship Global</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -20,7 +20,7 @@
   <body class="bg-white text-[#0d1b2a] font-sans">
     <!-- Navbar -->
     <nav
-      class="flex items-center justify-between px-6 md:px-16 py-4 border-b border-blue-200 bg-white/80 backdrop-blur-md fixed w-full z-10"
+      class="flex items-center justify-between px-6 md:px-16 py-4 border-b border-blue-200 bg-white/90 backdrop-blur-md fixed w-full z-20"
     >
       <a href="index.html" class="flex items-center space-x-3">
         <div
@@ -28,6 +28,25 @@
         ></div>
         <span class="text-xl font-semibold text-blue-800">Intern Global</span>
       </a>
+
+      <!-- Hamburger Button (Mobile) -->
+      <button id="menu-toggle" class="md:hidden focus:outline-none">
+        <svg
+          class="w-7 h-7 text-blue-800"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+
+      <!-- Desktop Menu -->
       <ul class="hidden md:flex space-x-8 text-sm text-blue-600">
         <li><a href="tentang.html" class="hover:text-blue-800">Tentang</a></li>
         <li>
@@ -43,6 +62,33 @@
         </li>
       </ul>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="md:hidden fixed top-16 left-0 w-full bg-white border-t border-blue-200 shadow transition-all duration-300 transform -translate-y-full opacity-0 z-10"
+    >
+      <ul class="flex flex-col space-y-4 p-6 text-blue-700 text-sm">
+        <li>
+          <a href="tentang.html" class="block hover:text-blue-800">Tentang</a>
+        </li>
+        <li>
+          <a href="internship.html" class="block hover:text-blue-800"
+            >Internship</a
+          >
+        </li>
+        <li>
+          <a href="profesi.html" class="block font-bold hover:text-blue-800"
+            >Profesi</a
+          >
+        </li>
+        <li>
+          <a href="testimoni.html" class="block hover:text-blue-800"
+            >Testimoni</a
+          >
+        </li>
+      </ul>
+    </div>
 
     <!-- Profesi Section -->
     <section
@@ -197,5 +243,24 @@
         </p>
       </div>
     </footer>
+
+    <!-- Hamburger Menu Script -->
+    <script>
+      const toggleButton = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      let isOpen = false;
+
+      toggleButton.addEventListener("click", () => {
+        isOpen = !isOpen;
+        if (isOpen) {
+          mobileMenu.classList.remove("-translate-y-full", "opacity-0");
+          mobileMenu.classList.add("translate-y-0", "opacity-100");
+        } else {
+          mobileMenu.classList.add("-translate-y-full", "opacity-0");
+          mobileMenu.classList.remove("translate-y-0", "opacity-100");
+        }
+      });
+    </script>
   </body>
 </html>
