@@ -22,21 +22,81 @@
         ></div>
         <span class="text-xl font-semibold text-blue-800">Intern Global</span>
       </a>
+
+      <!-- Hamburger button -->
+      <button
+        id="menu-toggle"
+        class="md:hidden text-blue-800 focus:outline-none"
+      >
+        <svg
+          id="icon-open"
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 block"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+        <svg
+          id="icon-close"
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 hidden"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+
+      <!-- Desktop Menu -->
       <ul class="hidden md:flex space-x-8 text-sm text-blue-600">
-        <li>
-          <a href="tentang.html" class="hover:text-blue-800">Tentang</a>
-        </li>
+        <li><a href="tentang.html" class="hover:text-blue-800">Tentang</a></li>
         <li>
           <a href="internship.html" class="hover:text-blue-800">Internship</a>
         </li>
-        <li>
-          <a href="profesi.html" class="hover:text-blue-800">Profesi</a>
-        </li>
+        <li><a href="profesi.html" class="hover:text-blue-800">Profesi</a></li>
         <li>
           <a href="testimoni.html" class="hover:text-blue-800">Testimoni</a>
         </li>
       </ul>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden px-6 pt-2 pb-4 transition-all duration-300 ease-in-out overflow-hidden max-h-0 bg-white shadow-md fixed top-16 w-full z-10"
+    >
+      <ul class="space-y-2 text-sm text-blue-600">
+        <li>
+          <a href="tentang.html" class="block hover:text-blue-800">Tentang</a>
+        </li>
+        <li>
+          <a href="internship.html" class="block hover:text-blue-800"
+            >Internship</a
+          >
+        </li>
+        <li>
+          <a href="profesi.html" class="block hover:text-blue-800">Profesi</a>
+        </li>
+        <li>
+          <a href="testimoni.html" class="block hover:text-blue-800"
+            >Testimoni</a
+          >
+        </li>
+      </ul>
+    </div>
 
     <!-- Hero -->
     <section
@@ -76,6 +136,7 @@
         </div>
       </div>
     </section>
+
     <!-- Footer -->
     <footer
       class="bg-white border-t border-blue-100 text-blue-600 text-sm mt-16"
@@ -85,15 +146,15 @@
           <div>
             <h4 class="font-semibold text-blue-800 mb-2">Kontak Kami</h4>
             <ul class="space-y-1">
-              <li>📞 +62 812-3456-7890</li>
-              <li>📧 info@internshipglobal.com</li>
+              <li>📞 +62 82114931561</li>
+              <li>📧 premiummmgtconsulting@gmail.com</li>
             </ul>
           </div>
           <div>
             <h4 class="font-semibold text-blue-800 mb-2">Sosial Media</h4>
             <ul class="space-y-1">
-              <li>📸 Instagram: @internship.global</li>
-              <li>🎵 TikTok: @internshipglobal</li>
+              <li>📸 Instagram: magang_luarnegeri</li>
+              <li>🎵 TikTok: @magang_luar_negeri00</li>
             </ul>
           </div>
         </div>
@@ -102,5 +163,34 @@
         </p>
       </div>
     </footer>
+
+    <!-- Script for Mobile Menu Toggle -->
+    <script>
+      const toggleBtn = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const iconOpen = document.getElementById("icon-open");
+      const iconClose = document.getElementById("icon-close");
+
+      let isOpen = false;
+
+      toggleBtn.addEventListener("click", () => {
+        if (!isOpen) {
+          mobileMenu.classList.remove("hidden");
+          setTimeout(() => {
+            mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+          }, 10);
+          iconOpen.classList.add("hidden");
+          iconClose.classList.remove("hidden");
+        } else {
+          mobileMenu.style.maxHeight = "0";
+          setTimeout(() => {
+            mobileMenu.classList.add("hidden");
+          }, 300);
+          iconOpen.classList.remove("hidden");
+          iconClose.classList.add("hidden");
+        }
+        isOpen = !isOpen;
+      });
+    </script>
   </body>
 </html>
